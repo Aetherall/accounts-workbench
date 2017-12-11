@@ -4,7 +4,7 @@
   "description": "",
   "main": "dist/index.js",
   "scripts": {
-    "start": "node ./config/start.js"
+    "start": "node ./config/start.js",
   },
   "author": "",
   "license": "ISC",

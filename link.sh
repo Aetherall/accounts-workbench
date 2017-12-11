@@ -1,0 +1,13 @@
+yarn link @accounts/server
+yarn link @accounts/express
+yarn link @accounts/token
+yarn link @accounts/mongo
+yarn link @accounts/password
+yarn link @accounts/oauth
+yarn link @accounts/oauth-facebook
+yarn link @accounts/email-debug
+yarn link @accounts/email-mailgun
+yarn link @accounts/email-plugin-password
+yarn link @accounts/express-token-headers
+yarn link @accounts/express-token-cookies
+yarn link @accounts/express-token-body

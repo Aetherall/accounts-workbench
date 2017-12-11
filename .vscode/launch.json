@@ -15,10 +15,10 @@
 			"outFiles": [
 				"${workspaceRoot}/dist/**/*.js",
 				"${workspaceRoot}/**/lib/**/*.js",
-				"!**/node_modules/**/*",
+				//"!**/node_modules/**/*",
 			],
       "skipFiles": ["${workspaceRoot}/node_modules/**/*", "<node_internals>/**/*.js"],
-			"smartStep": false,
+			"smartStep": true,
 			"trace": "sm",
 		},
   ]
