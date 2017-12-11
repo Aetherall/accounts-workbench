@@ -18,7 +18,7 @@ const externals = fs
 const client = {
 	name: 'client',
 	target: 'web',
-	devtool: 'inline-source-map',
+	devtool: 'eval-source-map',
 	entry: [clientEntry],
 	output: {
 		path: path.join(__dirname, '../dist'),
@@ -27,7 +27,7 @@ const client = {
 	},
 	resolve:{
 		alias:{
-			'@accounts/server': path.resolve(__dirname, '../accounts/packages/Server/Core/AccountsServer/src'),
+			/*'@accounts/server': path.resolve(__dirname, '../accounts/packages/Server/Core/AccountsServer/src'),
 			'@accounts/mongo': path.resolve(__dirname, '../accounts/packages/Server/Database/MongoDBInterface/src'),
 			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/ExpressTransport/src'),
 			'@accounts/express-token-headers': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/TokenTransport/Headers/src'),
@@ -47,7 +47,7 @@ const client = {
 			{
 				test: /.js$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
+				loader: ["source-map-loader",'babel-loader'],
             },
             {
 				test: /.ts$/,
@@ -64,7 +64,7 @@ const client = {
 const server = {
 	name: 'server',
 	target: 'node',
-	devtool: 'inline-source-map',
+	devtool: 'eval-source-map',
 	entry: [serverEntry],
 	output: {
 		path: path.join(__dirname, '../dist'),
@@ -75,7 +75,7 @@ const server = {
 	externals,
 	resolve:{
 		alias:{
-			'@accounts/server': path.resolve(__dirname, '../accounts/packages/Server/Core/AccountsServer'),
+			/*'@accounts/server': path.resolve(__dirname, '../accounts/packages/Server/Core/AccountsServer'),
 			'@accounts/mongo': path.resolve(__dirname, '../accounts/packages/Server/Database/MongoDBInterface'),
 			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/ExpressTransport'),
 			'@accounts/express-token-headers': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/TokenTransport/Headers'),
@@ -95,7 +95,7 @@ const server = {
 			{
 				test: /.jsx?$/,
 				exclude: /node_modules/,
-				loader: 'babel-loader',
+				loader: ["source-map-loader",'babel-loader'],
             },
             {
 				test: /.tsx?$/,

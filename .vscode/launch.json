@@ -18,52 +18,8 @@
 				"!**/node_modules/**/*",
 			],
       "skipFiles": ["${workspaceRoot}/node_modules/**/*", "<node_internals>/**/*.js"],
-			"smartStep": true,
-			"trace": "sm"
+			"smartStep": false,
+			"trace": "sm",
 		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Start dev server n_m",
-			"program": "${workspaceRoot}/omni/build/bin/run.dev.js",
-			"protocol": "inspector",
-			"sourceMaps": true,
-			"cwd": "${workspaceRoot}",
-			"outFiles": ["${workspaceRoot}/omni/build/dist/**/*.js"],
-			"skipFiles": [
-				"${workspaceRoot}/omni/build/dist/**/*.js",
-				"<node_internals>/**/*.js",
-				"${workspaceRoot}/node_modules/core-js/**/*",
-				"${workspaceRoot}/node_modules/memory-fs/**/*",
-				"${workspaceRoot}/node_modules/mongodb-core/**/*",
-				"${workspaceRoot}/node_modules/babel-template/**/*",
-				"${workspaceRoot}/node_modules/enhanced-resolve/**/*",
-				"${workspaceRoot}/node_modules/object.assign/**/*",
-				"${workspaceRoot}/node_modules/core-js/library/modules/**/*"
-			]
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Start dev server n_m full",
-			"program": "${workspaceRoot}/omni/build/bin/run.dev.js",
-			"protocol": "inspector",
-			"sourceMaps": true,
-			"cwd": "${workspaceRoot}",
-			"outFiles": ["${workspaceRoot}/omni/build/dist/**/*.js"],
-			"skipFiles": ["${workspaceRoot}/omni/build/dist/**/*.js", "<node_internals>/**/*.js"]
-		},
-		{
-			"type": "node",
-			"request": "launch",
-			"name": "Start dev server n_m trace",
-			"program": "${workspaceRoot}/omni/build/bin/run.dev.js",
-			"protocol": "inspector",
-			"sourceMaps": true,
-			"cwd": "${workspaceRoot}",
-			"outFiles": ["${workspaceRoot}/omni/build/dist/**/*.js"],
-			"skipFiles": ["${workspaceRoot}/omni/build/dist/**/*.js", "<node_internals>/**/*.js"],
-			"args": ["--trace-warnings"]
-		}
   ]
 }
