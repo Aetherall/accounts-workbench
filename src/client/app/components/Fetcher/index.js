@@ -10,7 +10,8 @@ const actionsFetcher = {
 
 
 const actionsResponse = {
-  setBody: (state) => (body) => ({...state, body })
+  setBody: (state) => (body) => ({...state, body }),
+  setHeaders: (state) => (headers) => ({...state, headers })
 }
 
 const mstpRequest = (request) => ({request});
@@ -35,6 +36,10 @@ export default class Fetcher extends Component {
         body: JSON.stringify(request.body) 
       }
     )
+    this.props.setHeaders({
+      accessToken: response.headers.get('accessToken'),
+      refreshToken: response.headers.get('refreshToken')
+    })
     const json = await response.json();
     this.props.setBody(json)
   }
