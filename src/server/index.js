@@ -1,13 +1,29 @@
 import express from 'express';
 
-import { accountsMiddleware } from './accounts'
+import bodyParser from 'body-parser'
+
+import { authMiddleware, accountsRouter } from './accounts'
 
 
 const app = express();
 
-const html = `<!doctype html><html><body><script src="/client.js"></script></body></html>`
+const html = `
+<!doctype html>
+<html>
+    <body>
+        <div id="app"></div>
+        <script src="/client.js"></script>
+    </body>
+</html>
+`
+app.use(bodyParser.urlencoded());
+app.use(bodyParser.json());
 
-app.use(accountsMiddleware);
+app.use(authMiddleware);
+
+console.log(accountsRouter)
+
+app.use(accountsRouter);
 
 app.get('/', ( req, res ) => {
     res.send(html)

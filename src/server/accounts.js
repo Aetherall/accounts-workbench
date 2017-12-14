@@ -91,19 +91,7 @@ const databaseInterface = new MongoInterface(Connection);
 // >=> Transport
 
 // Select a way to store tokens      // TODO Explain TokenTransportManager to use multiple TokenTransports
-const tokenTransport = new TokenTransportExpressHeaders({
-
-  access: {
-    name: 'accessToken',
-    canStore: () => true
-  },
-
-  refresh: {
-    name: 'refreshToken',
-    canStore: () => true
-  }
-
-})
+const tokenTransport = new TokenTransportExpressHeaders()
 
 
 
@@ -112,13 +100,13 @@ const transport = new TransportExpress({
 
   tokenTransport,
 
-  path: 'accounts'
-
 })
 
-// Extract the middleware and export it to consume it on express
-export const accountsMiddleware = transport.router;
+// Extract the authentication middleware and export it to consume it on express
+export const authMiddleware = transport.middleware;
 
+//extract the accounts router and export it to consume it on express
+export const accountsRouter = transport.router;
 
 // >=> Authentication
 

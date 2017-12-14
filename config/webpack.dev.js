@@ -18,8 +18,8 @@ const externals = fs
 const client = {
 	name: 'client',
 	target: 'web',
-	devtool: 'eval-source-map',
-	entry: [clientEntry],
+	devtool: 'source-map',
+	entry: ['babel-polyfill',clientEntry],
 	output: {
 		path: path.join(__dirname, '../dist'),
 		filename: 'client.js',
@@ -64,7 +64,7 @@ const client = {
 const server = {
 	name: 'server',
 	target: 'node',
-	devtool: 'eval-source-map',
+	devtool: 'source-map',
 	entry: [serverEntry],
 	output: {
 		path: path.join(__dirname, '../dist'),

@@ -1,4 +1,9 @@
 {
-  "presets": ["env", "stage-0"],
-  "retainLines": true
+  "presets": ["env", "react", "stage-0"],
+  "retainLines": true,
+  "plugins": [
+    "transform-class-properties",
+    "transform-object-rest-spread",
+    "transform-decorators"
+  ]
 }
