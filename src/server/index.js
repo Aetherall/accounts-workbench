@@ -1,6 +1,8 @@
 import express from 'express';
 
 import bodyParser from 'body-parser'
+import cookieParser from 'cookie-parser'
+import cors from 'cors'
 
 import { authMiddleware, accountsRouter } from './accounts'
 
@@ -16,12 +18,20 @@ const html = `
     </body>
 </html>
 `
+
+app.use(cors({
+    origin: 'localhost'
+}));
 app.use(bodyParser.urlencoded());
 app.use(bodyParser.json());
+app.use(cookieParser());
+
+app.use( (req, res, next) => {
+    console.log(req)
+    next()
+})
 
 app.use(authMiddleware);
-
-console.log(accountsRouter)
 
 app.use(accountsRouter);
 

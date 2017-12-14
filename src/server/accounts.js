@@ -36,9 +36,15 @@ import TransportExpress from '@accounts/express';
 // Defines the way to store the tokens while sending them to the client 
 
 import TokenTransportExpressHeaders from '@accounts/express-token-headers';   // Headers => Store in request headers
-//import TokenTransportExpressCookies from '@accounts/express-token-cookies'; // Cookies => Store in request cookies
-//import TokenTransportExpressBody from '@accounts/express-token-body';       // Body    => Store in request body
+import TokenTransportExpressCookies from '@accounts/express-token-cookies'; // Cookies => Store in request cookies
+import TokenTransportExpressBody from '@accounts/express-token-body';       // Body    => Store in request body
 
+
+//==================================================
+// Token Transport Manager => Token Storage 
+// Allow multiple TokenTransport
+
+import TokenTransportManager from '@accounts/token-transport-manager';
 
 
 // =================================================
@@ -90,9 +96,26 @@ const databaseInterface = new MongoInterface(Connection);
 
 // >=> Transport
 
-// Select a way to store tokens      // TODO Explain TokenTransportManager to use multiple TokenTransports
-const tokenTransport = new TokenTransportExpressHeaders()
+// Select a way to store tokens
+const tokenTransportHeaders = new TokenTransportExpressHeaders()
+const tokenTransportCookies = new TokenTransportExpressCookies({
+  access:{
+    secure: false,
+    httpOnly: false,
+    domain: 'localhost',
+    sameSite: false,
+  },
+  refresh:{
+    secure: false,
+    httpOnly: false,
+    domain: 'localhost',
+    sameSite: false,
+  }
+})
+const tokenTransportBody = new TokenTransportExpressBody()
 
+// If multiple token transport selected, the Token Transport Manager must be used 
+const tokenTransport = new TokenTransportManager(tokenTransportHeaders, tokenTransportCookies, tokenTransportBody)
 
 
 // Build the transport 

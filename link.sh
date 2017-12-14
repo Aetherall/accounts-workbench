@@ -11,3 +11,4 @@ yarn link @accounts/email-plugin-password
 yarn link @accounts/express-token-headers
 yarn link @accounts/express-token-cookies
 yarn link @accounts/express-token-body
+yarn link @accounts/token-transport-manager
