@@ -17,10 +17,10 @@ const Body = (props) =>
   </PanelHeader>
 
   <Box p={4}>
-    <JSONTree data={props.json} />
+    <JSONTree data={props.body} />
   </Box>
 
 </Panel>
   
 
-export default connect('state.response.body')(Body)
+export default connect('state.response')(Body)

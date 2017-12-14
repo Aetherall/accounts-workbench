@@ -33,4 +33,4 @@ const Headers = (props) =>
 </Panel>
   
 
-export default connect('state.request.headers', actions)(Headers)
+export default connect('state.request.headers', undefined, actions)(Headers)

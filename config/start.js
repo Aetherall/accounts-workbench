@@ -25,7 +25,7 @@ const webpackDevMiddlewareOptions = {
 const app = express();
 
 app.use(function(req, res, next) {
-	console.log('Time:', Date.now());
+	console.log('Time:', new Date().toString());
 	next();
 });
 
@@ -39,3 +39,7 @@ app.use(webpackHotServerMiddleware(compilers));
 app.listen(3000, function() {
 	console.log('==> Server Started');
 });
+
+
+
+process.on('unhandledRejection', r => console.error(r.stack));

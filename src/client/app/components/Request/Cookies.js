@@ -31,4 +31,4 @@ const Cookies = (props) =>
   
 </Panel>
 
-export default connect('state.request.cookies', actions)(Cookies)
+export default connect('state.request.cookies', undefined, actions)(Cookies)

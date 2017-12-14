@@ -52,4 +52,4 @@ const Body = (props) =>
 </Panel>
   
 
-export default connect('state.request.body', actions)(Body)
+export default connect('state.request.body', undefined, actions)(Body)

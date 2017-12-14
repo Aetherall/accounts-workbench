@@ -21,9 +21,9 @@ const initialState = {
     }
   },
   response: {
-    body: { json : {} },
-    headers: { json : {} },
-    cookies: { json : {} },
+    body: {},
+    headers: {},
+    cookies: {},
   },
   fetcher: {
     method: 'POST',

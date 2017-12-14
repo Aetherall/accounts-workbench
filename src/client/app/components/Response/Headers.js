@@ -15,10 +15,10 @@ const Headers = (props) =>
   <PanelHeader>Headers</PanelHeader>
 
   <Box p={4}>
-    <JSONTree data={props.json} />
+    <JSONTree data={props.headers} />
   </Box>
 
 </Panel>
   
 
-export default connect('state.response.headers')(Headers)
+export default connect('state.response')(Headers)

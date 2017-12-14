@@ -4,6 +4,6 @@
   "plugins": [
     "transform-class-properties",
     "transform-object-rest-spread",
-    "transform-decorators"
+    "transform-decorators-legacy"
   ]
 }

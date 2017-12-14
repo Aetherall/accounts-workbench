@@ -15,10 +15,10 @@ const Cookies = (props) =>
   <PanelHeader>Cookies</PanelHeader>
 
   <Box p={4}>
-    <JSONTree data={props.json} />
+    <JSONTree data={props.cookies} />
   </Box>
 
 </Panel>
   
 
-export default connect('state.response.cookies')(Cookies)
+export default connect('state.response')(Cookies)

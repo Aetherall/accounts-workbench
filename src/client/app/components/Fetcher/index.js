@@ -2,14 +2,28 @@ import React, { Component } from 'react';
 
 import connect from 'rzero-link';
 
-const actions = {
-  setFetch: (state) => (fetch) => ({...state, fetcher:{...state.fetcher, fetch}})
+const mstpFetcher = (fetcherOptions) => ({fetcherOptions});
+
+const actionsFetcher = {
+  setFetch: (state) => (fetch) => ({ ...state, fetch })
 }
 
-class Fetcher extends Component {
+
+const actionsResponse = {
+  setBody: (state) => (body) => ({...state, body })
+}
+
+const mstpRequest = (request) => ({request});
+
+
+@connect('state.fetcher', mstpFetcher, actionsFetcher)
+@connect('state.response', undefined, actionsResponse)
+@connect('state.request',mstpRequest)
+export default class Fetcher extends Component {
 
   fetcher =  (url) => async (e) => {
-    const { request, fetcher:fetcherOptions } = this.props;
+    console.log(this)
+    const { request, fetcherOptions } = this.props;
     const response = await fetch(`/accounts/${url}`,
       { 
         method: fetcherOptions.method,
@@ -21,8 +35,8 @@ class Fetcher extends Component {
         body: JSON.stringify(request.body) 
       }
     )
-    console.log(await response.json())
-    console.log(response.body)
+    const json = await response.json();
+    this.props.setBody(json)
   }
 
   componentDidMount() {
@@ -33,5 +47,3 @@ class Fetcher extends Component {
     return null
   }
 }
-
-export default connect('state', actions)(Fetcher)
