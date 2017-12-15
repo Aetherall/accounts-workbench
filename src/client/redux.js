@@ -9,7 +9,8 @@ const initialState = {
       email: '',
       password: '',
       accessToken: '',
-      refreshToken: ''
+      refreshToken: '',
+      token: ''
     },
     headers: {
       accessToken: '',

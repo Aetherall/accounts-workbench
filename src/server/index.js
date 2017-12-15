@@ -12,6 +12,9 @@ const app = express();
 const html = `
 <!doctype html>
 <html>
+    <head>
+        <title>Accounts Workbench</title>
+    </head>
     <body>
         <div id="app"></div>
         <script src="/client.js"></script>

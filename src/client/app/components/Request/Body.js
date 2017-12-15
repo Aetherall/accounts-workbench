@@ -12,6 +12,7 @@ const actions = {
   setPassword: (state) => (e) => ({ ...state, password: e.target.value}),
   setAccessToken: (state) => (e) => ({ ...state, accessToken: e.target.value}),
   setRefreshToken: (state) => (e) => ({ ...state, refreshToken: e.target.value}),
+  setToken: (state) => (e) => ({ ...state, token: e.target.value}),
 }
 
 
@@ -46,6 +47,11 @@ const Body = (props) =>
     <Row>
       <Label w={1/5}>RefreshToken : </Label>
       <Input type="string" name="refreshToken" defaultValue={props.refreshToken} onInput={props.setRefreshToken} />
+    </Row>
+
+    <Row>
+      <Label w={1/5}>Token : </Label>
+      <Input type="string" name="token" defaultValue={props.token} onInput={props.setToken} />
     </Row>
   </Box>
 
