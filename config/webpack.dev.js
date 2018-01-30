@@ -96,8 +96,8 @@ const server = {
 				test: /.jsx?$/,
 				exclude: /node_modules/,
 				loader: ["source-map-loader",'babel-loader'],
-            },
-            {
+      },
+      {
 				test: /.tsx?$/,
 				exclude: /node_modules/,
 				loader: 'ts-loader',
