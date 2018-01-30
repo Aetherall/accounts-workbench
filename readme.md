@@ -48,7 +48,7 @@ lerna bootstrap
 
 Link the monorepo packages :
 ```
-yarn link_global
+yarn link:global
 ```
 
 Start watching the packages :
