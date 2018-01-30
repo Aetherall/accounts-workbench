@@ -13,7 +13,7 @@ To use :
 
 clone the repo :
 ```
-git clone https://github.com/Aetherall/accounts-workbench.git
+git clone --recursive https://github.com/Aetherall/accounts-workbench.git
 ```
 
 change to the created directory :
@@ -24,11 +24,6 @@ cd accounts-workbench
 Install dependencies :
 ```
 yarn
-```
-
-Init the accounts submodule :
-```
-git submodule init accounts
 ```
 
 Change to accounts submodule :
