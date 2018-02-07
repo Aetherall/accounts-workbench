@@ -25,23 +25,6 @@ const client = {
 		filename: 'client.js',
 		publicPath: '/',
 	},
-	resolve:{
-		alias:{
-			/*'@accounts/server': path.resolve(__dirname, '../accounts/packages/Server/Core/AccountsServer/src'),
-			'@accounts/mongo': path.resolve(__dirname, '../accounts/packages/Server/Database/MongoDBInterface/src'),
-			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/ExpressTransport/src'),
-			'@accounts/express-token-headers': path.resolve(__dirname, '../accounts/packages/Server/Transport/Express/TokenTransport/Headers/src'),
-			'@accounts/password': path.resolve(__dirname, '../accounts/packages/Server/Authentication/Password/PasswordService/src'),
-			'@accounts/email-debug': path.resolve(__dirname, '../accounts/packages/Server/Notification/Email/EmailDebug/src'),
-			'@accounts/email-plugin-password': path.resolve(__dirname, '../accounts/packages/Server/Notification/Email/Plugins/PasswordPlugin/src'),
-			'@accounts/token': path.resolve(__dirname, '../accounts/packages/Server/Authorization/TokenManager/src'),
-			/*'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server'),
-			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server'),
-			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server'),
-			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server'),
-			'@accounts/express': path.resolve(__dirname, '../accounts/packages/Server')*/
-		}
-	},
 	module: {
 		rules: [
 			{
